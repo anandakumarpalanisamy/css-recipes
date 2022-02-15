@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: green;
+        }
+        div.first {
+            opacity: 0.1;
+        }
+        div.second {
+            opacity: 0.3;
+        }
+        div.third {
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transparent Boxes</h1>
+    <p>When using opacity property to add transparency to the background element,
+        all of its child elements become Transparent as well. This can make the text inside
+        a fully transparent element hard to read.
+    </p>
+    <div class="first">
+        <h1>Opacity 0.1</h1>
+    </div>
+    <div class="second">
+        <h1>Opacity 0.3</h1>
+    </div>
+    <div class="third">
+        <h1>Opacity 0.6</h1>
+    </div>
+    <div>
+        <h1>Opacity 1 (default)</h1>
+    </div>
+</body>
+</html>
