@@ -1,0 +1,48 @@
+.fadein-btn {
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.fadein-btn:hover {
+    opacity: 1;
+}
+
+.fadeout-btn {
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.fadeout-btn:hover {
+    opacity: 0.5;
+}
+
+.fadebg-btn {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+}
+
+.fadebg-btn:hover {
+    background-color: #3e8e41;
+    color: white;
+}
+
