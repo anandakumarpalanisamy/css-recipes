@@ -1,6 +1,6 @@
 ```mermaid
 C4Context
-title System Context diagram for Internet Banking System
+title Order At Table System
 
 Person(customerA, "Banking Customer A", "A customer of the bank, with personal bank accounts.")
 Person(customerB, "Banking Customer B")
