@@ -14,10 +14,10 @@ System_Boundary(Azzurri, "OAT") {
   ContainerDb(Aurora, "Read/Write Relational Database", "Aurora MySQL", "Stores payment transactions for version 2 of payment logic")
 }
 
-System_Ext(system_ext_Yext, "Yext", "Provides Restaurants and Menu data"
-System_Ext(system_ext_Comtrex, "Comtrex", "Provides ordering mechanism via POS Till system"
-System_Ext(system_ext_Eagleeye, "Eagle Eye", "Provides Gift Card payment capabilities"
-System_Ext(system_ext_Stripe, "Stripe", "Provides payment capabilities via card and wallet"
-System_Ext(system_ext_Yumpingo, "Yumpingo", "Provides capabilities to collect customer reviews"
-System_Ext(system_ext_Pennies, "Pennies", "Provides ability to allow users to donate to charity"
+System_Ext(system_ext_Yext, "Yext", "Provides Restaurants and Menu data")
+System_Ext(system_ext_Comtrex, "Comtrex", "Provides ordering mechanism via POS Till system")
+System_Ext(system_ext_Eagleeye, "Eagle Eye", "Provides Gift Card payment capabilities")
+System_Ext(system_ext_Stripe, "Stripe", "Provides payment capabilities via card and wallet")
+System_Ext(system_ext_Yumpingo, "Yumpingo", "Provides capabilities to collect customer reviews")
+System_Ext(system_ext_Pennies, "Pennies", "Provides ability to allow users to donate to charity")
 ```
