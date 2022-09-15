@@ -14,5 +14,5 @@ A collection of css recipes from the w3schools
     Rel(pdqWaiter, oat, "makes requests to", "HTTPS/JSON")
     Rel(oat, comtrex, "uses", "HTTPS/JSON")
     
-    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
+    UpdateLayoutConfig($c4ShapeInRow="1", $c4BoundaryInRow="1")
 ```
