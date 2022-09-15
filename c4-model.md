@@ -2,6 +2,8 @@
 C4Container
 title Order At Table System
 
+LAYOUT_TOP_DOWN()
+
 Person_Ext(person_ext_public, "User")
 System_Boundary(Azzurri, "OAT") {
   Container(oat_front_end, "OAT Front End PWA", "Enables user to join a table, order and pay", "javascript")
