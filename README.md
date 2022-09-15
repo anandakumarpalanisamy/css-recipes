@@ -1,7 +1,7 @@
 # css-recipes
 A collection of css recipes from the w3schools
 
-```plantuml
+```mermaid
 !includeurl https://raw.githubusercontent.com/anandakumarpalanisamy/css-recipes/main/uml/oatcontext.puml
 ```
 
