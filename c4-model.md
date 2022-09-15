@@ -2,7 +2,7 @@
 C4Container
 title Order At Table System
 
-LAYOUT_TOP_DOWN()
+direction TD
 
 Person_Ext(person_ext_public, "User")
 System_Boundary(Azzurri, "OAT") {
