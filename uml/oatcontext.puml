@@ -5,7 +5,7 @@ LAYOUT_WITH_LEGENT()
 
 title Context of Order At Table System
 
-Person(ecommCustomer, Customer, Customer of our online order at table system)
+Person(ecommCustomer, Customer, "Customer of our online order at table system")
 System(oat, "Order At Table System", "System enabling the customers to order & pay at table in one of Zizzi/ASK Italian restaurants")
 
 Rel(ecommCustomer, oat, "makes requests to", "HTTPS/JSON")
