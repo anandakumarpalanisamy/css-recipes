@@ -1,12 +1,12 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 
-LAYOUT_WITH_LEGENT()
+LAYOUT_WITH_LEGEND()
 
 title Context of Order At Table System
 
 Person(ecommCustomer, Customer, "Customer of our online order at table system")
-System(oat, "Order At Table System", "System enabling the customers to order & pay at table in one of Zizzi/ASK Italian restaurants")
+System(oat, "Order At Table System", "System enabling the customers to order and pay at table in one of Zizzi or ASK Italian restaurants")
 
 Rel(ecommCustomer, oat, "makes requests to", "HTTPS/JSON")
 
