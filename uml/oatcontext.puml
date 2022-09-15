@@ -3,11 +3,15 @@
 
 LAYOUT_WITH_LEGEND()
 
-title Context of Order At Table System
+title Order At Table System
 
 Person(ecommCustomer, Customer, "Customer of our online order at table system")
+Person(pdqWaiter, Waiter, "Waiter at Zizzi or ASK Italian restaurant using a PDQ application")
 System(oat, "Order At Table System", "System enabling the customers to order and pay at table in one of Zizzi or ASK Italian restaurants")
+System_Ext(comtrex, "Point of Sale System", "System for enabling the OAT system to send the orders to kitchen at restaurants")
 
 Rel(ecommCustomer, oat, "makes requests to", "HTTPS/JSON")
+Rel(pdqWaiter, oat, "makes requests to", "HTTPS/JSON")
+Rel(oat, comtrex, "uses", "HTTPS/JSON")
 
 @enduml
