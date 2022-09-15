@@ -1,10 +1,10 @@
 # css-recipes
 A collection of css recipes from the w3schools
 
-```mermaid
+```plantuml
 !includeurl https://raw.githubusercontent.com/anandakumarpalanisamy/css-recipes/main/uml/oatcontext.puml
 ```
 
-![Class Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/anandakumarpalanisamy/css-recipes/main/uml/oatcontext2.puml)
+![Class Diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/anandakumarpalanisamy/css-recipes/main/uml/oatcontext2.puml)
 
 
