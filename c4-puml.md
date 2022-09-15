@@ -1,3 +1,4 @@
+<div hidden>
 ```
 @startuml
 !include /plantuml/C4_Container.puml
@@ -71,3 +72,5 @@ Rel_R(container_public, container_db_memcached, "Reads/Writes data using", "Memc
 
 @enduml
 ```
+</div>
+![](firstDiagram.svg)
