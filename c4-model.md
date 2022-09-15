@@ -22,4 +22,4 @@ System_Ext(system_ext_Yumpingo, "Yumpingo", "Provides capabilities to collect cu
 System_Ext(system_ext_Pennies, "Pennies", "Provides ability to allow users to donate to charity")
 ```
 
-Rel_D(person_ext_public, oat_front_end,  "Makes API calls", "JSON/HTTPS")
+Rel(person_ext_public, oat_front_end,  "Makes API calls", "JSON/HTTPS")
