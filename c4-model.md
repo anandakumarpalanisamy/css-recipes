@@ -23,6 +23,7 @@ System_Ext(system_ext_Pennies, "Pennies", "Provides ability to allow users to do
 
 
 Rel(person_ext_public, oat_front_end,  "Makes API calls", "JSON/HTTPS")
+UpdateElementStyle(system_ext_Stripe, $fontColor="red", $bgColor="grey", $borderColor="red" $offsetX="90")
 Rel(person_ext_public, system_ext_Stripe,  "Makes API calls", "JSON/HTTPS")
 Rel(pat_payment, system_ext_Stripe,  "Makes API calls", "JSON/HTTPS")
 ```
