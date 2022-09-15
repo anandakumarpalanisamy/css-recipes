@@ -5,7 +5,7 @@
 
 LAYOUT_WITH_LEGEND()
 
-title Context Order At Table System
+title Context of Order At Table System
 
 Person(ecommCustomer, Customer, "Customer of our online order at table system")
 Person(pdqWaiter, Customer, "Waiter at Zizzi or ASK Italian restaurant using a PDQ application")
