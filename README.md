@@ -1,7 +1,7 @@
 # css-recipes
 A collection of css recipes from the w3schools
 
-![ContextDiagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/anandakumarpalanisamy/css-recipes/main/uml/oatcontext2.puml)
+![ContextDiagram1](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/anandakumarpalanisamy/css-recipes/main/uml/oatcontext2.puml)
 
 ```mermaid
   C4Context
