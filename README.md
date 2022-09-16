@@ -108,7 +108,7 @@ graph TB
   6-. "<div>Makes API calls to store and<br />retrieve configuration data<br />for OAT application</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->7
   10-. "<div>Makes API calls via SDK to<br />manage payment transactions</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->15
   10-. "<div>Reads and writes payment<br />commitments and transactions<br />includes stripe payments and<br />gift card payments</div><div style='font-size: 70%'>[,]</div>" .->12
-  10-. "<div>Reads and writes payment<br />commitments and transactions<br />includes stripe payments and<br />gift card payments ,</div><div style='font-size: 70%'>[NoSQL"]</div>" .->11
+  10-. "<div>Reads and writes payment<br />commitments and transactions<br />includes stripe payments and<br />gift card payments</div><div style='font-size: 70%'>[NoSQL"]</div>" .->11
   6-. "<div>Reads and write sessions,<br />basket, table, table stats,<br />items and payments data</div><div style='font-size: 70%'>[NoSQL]</div>" .->11
   7-. "<div>Reads and writes<br />configuration data</div><div style='font-size: 70%'>[NoSQL]</div>" .->11
   8-. "<div>Reads and writes menus,<br />prices and restaurants data</div><div style='font-size: 70%'>[NoSQL]</div>" .->11
@@ -116,6 +116,6 @@ graph TB
   8-. "<div>Post transaction process to<br />allocate loyalty Z points to<br />customer</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->14
   8-. "<div>Calculate donation amount on<br />bill value and log donations<br />made to charities on Pennies<br />system</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->18
   9-. "<div>Retrieve and update table,<br />order and post-payment<br />management data</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->13
-  10-. "<div>Check balance and redeem gift<br />cards to pay for the order</div><div style='font-size: 70%'>[,]</div>" .->16
+  10-. "<div>Check balance and redeem gift<br />cards to pay for the order</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->16
   6-. "<div>Send customer review data</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->19
 ```
