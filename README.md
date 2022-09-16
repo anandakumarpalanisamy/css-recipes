@@ -1,22 +1,20 @@
 # OAT Diagrams
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff'}}}%%
+%%{init: {'theme':'base'}}%%
 graph TB
     subgraph SystemContext [OAT System Context]
-    style SystemContext fill:#ccc,stroke:#ccc,stroke-width:1px,color:#000,stroke-dasharray: 5 5
     Waiter((fa:fa-users Waiters)) -. "Uses PDQ device to take<br/>payments at the<br/>table" .-> OAT(Order at Table)
     end
 
     Customer((fa:fa-users Customers)) -. "Visits oat website to order<br/>food and pay at<br/> the table" .-> OAT(Order at Table)
     OAT(Order at Table) -. "Allows OAT application<br/> to submit order<br/> to kitchen,<br/> retrieve price,<br/> update payment and<br/> payment-post process" .-> Comtrex(Comtrex<br/></br/>POS System )
-    OAT(Order at Table) -. "Process customer<br/> order and<br/> payments transactions to<br/> allocate loyalty Z<br/> points to<br/> customer" .-> Atreemo(Atreemo <br/> Customer Loyalty <br/> Platform)
+    OAT(Order at Table) -. "Process customer<br/> order and<br/> payments transactions to<br/> allocate loyalty Z<br/> points to<br/> customer" .-> Atreemo(Atreemo <br/><br/> Customer Loyalty <br/> Platform)
     OAT(Order at Table) -. "Manage card<br/> payments" .-> Stripe(Stripe <br/><br/> Payment Provider)
     OAT(Order at Table) -. "Manage gift card<br/> payments" .-> EagleEye(Eagle Eye <br/><br/> Gift Cards<br/> Payment Provider)
     OAT(Order at Table) -. "Manage card payments" .-> Yext(Yext <br/><br/> Menu & Restaurant<br> Data Provider)
     OAT(Order at Table) -. "Calculate &<br/> submit donation<br/> by bill value to<br/> charities<br/> supported by<br/> Pennies" .-> Pennies(Pennies <br/><br/> Menu & Restaurant<br> Data Provider)
     OAT(Order at Table) -. "Collect customer<br/> reviews" .-> Yumpingo(Yumpingo <br/><br/> Review System)
-    
 ```
 
 ## OAT Context Diagram
