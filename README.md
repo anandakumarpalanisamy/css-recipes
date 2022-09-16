@@ -3,6 +3,8 @@ A collection of css recipes from the w3schools
 
 # Diagrams
 
+## Context Diagram
+
 ```mermaid
 graph TB
   linkStyle default fill:#ffffff
@@ -43,4 +45,58 @@ graph TB
   3-. "<div>Uses</div><div style='font-size: 70%'></div>" .->8
   3-. "<div>Uses</div><div style='font-size: 70%'></div>" .->9
   3-. "<div>Uses</div><div style='font-size: 70%'></div>" .->10
+```
+
+## Container Diagram
+
+```mermaid
+graph TB
+  linkStyle default fill:#ffffff
+
+  1["<div style='font-weight: bold'>Customer</div><div style='font-size: 70%; margin-top: 0px'>[Person]</div><div style='font-size: 80%; margin-top:10px'>Customer of Zizzi or ASK<br />Italian who looks at order<br />and pay at the table using<br />online Progressive web app</div>"]
+  style 1 fill:#08427b,stroke:#052e56,color:#ffffff
+  2["<div style='font-weight: bold'>Waiter</div><div style='font-size: 70%; margin-top: 0px'>[Person]</div><div style='font-size: 80%; margin-top:10px'>Waiter of Zizzi or ASK<br />Italian restaurants who look<br />to accept payment for the<br />table using PDQ application</div>"]
+  style 2 fill:#999999,stroke:#6b6b6b,color:#ffffff
+  5("<div style='font-weight: bold'>Stripe Payment Provider</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Card & Wallet Payments</div>")
+  style 5 fill:#999999,stroke:#6b6b6b,color:#ffffff
+
+  subgraph 10 [Order At Table]
+    style 10 fill:#ffffff,stroke:#444444,color:#444444
+
+    11("<div style='font-weight: bold'>Progressive Web Application</div><div style='font-size: 70%; margin-top: 0px'>[Container: JavaScript and React]</div>")
+    style 11 fill:#438dd5,stroke:#2e6295,color:#ffffff
+    12("<div style='font-weight: bold'>PDQ Application</div><div style='font-size: 70%; margin-top: 0px'>[Container: Native App]</div><div style='font-size: 80%; margin-top:10px'>Andriod</div>")
+    style 12 fill:#438dd5,stroke:#2e6295,color:#ffffff
+    13("<div style='font-weight: bold'>Gateway API</div><div style='font-size: 70%; margin-top: 0px'>[Container: Koa JS Microservice]</div>")
+    style 13 fill:#438dd5,stroke:#2e6295,color:#ffffff
+    14("<div style='font-weight: bold'>Restaurant API</div><div style='font-size: 70%; margin-top: 0px'>[Container: Koa JS Microservice]</div>")
+    style 14 fill:#438dd5,stroke:#2e6295,color:#ffffff
+    15("<div style='font-weight: bold'>Operator API</div><div style='font-size: 70%; margin-top: 0px'>[Container: Koa JS Microservice]</div>")
+    style 15 fill:#438dd5,stroke:#2e6295,color:#ffffff
+    16("<div style='font-weight: bold'>Payment API</div><div style='font-size: 70%; margin-top: 0px'>[Container: Koa JS Microservice]</div>")
+    style 16 fill:#438dd5,stroke:#2e6295,color:#ffffff
+    17("<div style='font-weight: bold'>Config API</div><div style='font-size: 70%; margin-top: 0px'>[Container: Koa JS Microservice]</div>")
+    style 17 fill:#438dd5,stroke:#2e6295,color:#ffffff
+    18[("<div style='font-weight: bold'>OAT DynamoDB</div><div style='font-size: 70%; margin-top: 0px'>[Container: NoSQL Database]</div><div style='font-size: 80%; margin-top:10px'>Stores client session, table,<br />table stats, restaurants and<br />payments data</div>")]
+    style 18 fill:#438dd5,stroke:#2e6295,color:#ffffff
+    19[("<div style='font-weight: bold'>PaymentsV2 Database</div><div style='font-size: 70%; margin-top: 0px'>[Container: SQL Database]</div><div style='font-size: 80%; margin-top:10px'>Stores payments transaction<br />data</div>")]
+    style 19 fill:#438dd5,stroke:#2e6295,color:#ffffff
+  end
+
+  1-. "<div></div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->11
+  2-. "<div></div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->12
+  12-. "<div></div><div style='font-size: 70%'>[React Navtive Web View]</div>" .->11
+  11-. "<div></div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->13
+  11-. "<div></div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->17
+  11-. "<div></div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->5
+  13-. "<div></div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->14
+  13-. "<div></div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->15
+  13-. "<div></div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->16
+  13-. "<div></div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->17
+  16-. "<div></div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->5
+  16-. "<div></div><div style='font-size: 70%'></div>" .->19
+  16-. "<div></div><div style='font-size: 70%'></div>" .->18
+  13-. "<div></div><div style='font-size: 70%'></div>" .->18
+  17-. "<div></div><div style='font-size: 70%'></div>" .->18
+  14-. "<div></div><div style='font-size: 70%'></div>" .->18
 ```
