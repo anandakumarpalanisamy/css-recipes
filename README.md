@@ -138,10 +138,10 @@ graph TB
 ## Context Diagram - Mermaid v2
 ```mermaid
 graph TB
-    subgraph System Context
-    Waiter --> OAT[Order at Table]
-    style Waiter fill:#fff,stroke:#333,stroke-width:4px
-    style Customer fill:#fff,stroke:#333,stroke-width:4px
+    subgraph SystemContext [OAT System Context]
+    style SystemContext fill:#fff,stroke:#ccc,stroke-width:1px,color:#fff,stroke-dasharray: 5 5
+    Waiter[fa:fa-user Waiter] -. Uses to take payments at the table via PDQ device .-> OAT[Order at Table]
+
     end
 
     Customer[fa:fa-user Customer] .-> OAT
