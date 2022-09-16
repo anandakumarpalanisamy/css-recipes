@@ -4,17 +4,17 @@
 %%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff', }}}%%
 graph TB
     subgraph SystemContext [System Context - Order At Table Application]
-    Waiter((fa:fa-users Waiters)) -. "Uses PDQ device to take<br/>payments at the<br/>table" .-> OAT(Order at Table)
+    Waiter((fa:fa-users Waiters)) -. "Uses PDQ device to take<br/>payments at the<br/>table" .-> OAT(Order at Table<br/><br/>Allows users)
     end
 
     Customer((fa:fa-users Customers)) -. "Visits oat website to order<br/>food and pay at<br/> the table" .-> OAT(Order at Table)
-    OAT(Order at Table) -. "Allows OAT application<br/> to submit order<br/> to kitchen,<br/> retrieve price,<br/> update payment and<br/> payment-post process" .-> Comtrex(Comtrex<br/></br/>POS System )
-    OAT(Order at Table) -. "Process customer<br/> order and<br/> payments transactions to<br/> allocate loyalty Z<br/> points to<br/> customer" .-> Atreemo(Atreemo <br/><br/> Customer Loyalty <br/> Platform)
-    OAT(Order at Table) -. "Manage card<br/> payments" .-> Stripe(Stripe <br/><br/> Payment Provider)
-    OAT(Order at Table) -. "Manage gift card<br/> payments" .-> EagleEye(Eagle Eye <br/><br/> Gift Cards<br/> Payment Provider)
-    OAT(Order at Table) -. "Manage card payments" .-> Yext(Yext <br/><br/> Menu & Restaurant<br> Data Provider)
-    OAT(Order at Table) -. "Calculate &<br/> submit donation<br/> by bill value to<br/> charities<br/> supported by<br/> Pennies" .-> Pennies(Pennies <br/><br/> Menu & Restaurant<br> Data Provider)
-    OAT(Order at Table) -. "Collect customer<br/> reviews" .-> Yumpingo(Yumpingo <br/><br/> Review System)
+    OAT -. "Allows OAT application<br/> to submit order<br/> to kitchen,<br/> retrieve price,<br/> update payment and<br/> payment-post process" .-> Comtrex(Comtrex<br/></br/>POS System )
+    OAT-. "Process customer<br/> order and<br/> payments transactions to<br/> allocate loyalty Z<br/> points to<br/> customer" .-> Atreemo(Atreemo <br/><br/> Customer Loyalty <br/> Platform)
+    OAT -. "Manage card<br/> payments" .-> Stripe(Stripe <br/><br/> Payment Provider)
+    OAT -. "Manage gift card<br/> payments" .-> EagleEye(Eagle Eye <br/><br/> Gift Cards<br/> Payment Provider)
+    OAT -. "Manage card payments" .-> Yext(Yext <br/><br/> Menu & Restaurant<br> Data Provider)
+    OAT -. "Calculate &<br/> submit donation<br/> by bill value to<br/> charities<br/> supported by<br/> Pennies" .-> Pennies(Pennies <br/><br/> Menu & Restaurant<br> Data Provider)
+    OAT -. "Collect customer<br/> reviews" .-> Yumpingo(Yumpingo <br/><br/> Review System)
 ```
 
 ## OAT Context Diagram
