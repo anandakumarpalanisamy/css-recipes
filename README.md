@@ -1,7 +1,7 @@
 # OAT Diagrams
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': { 'primaryColor': '#ffffff'}}}%%
+%%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff'}}}%%
 graph TB
     subgraph SystemContext [OAT System Context]
     style SystemContext fill:#fff,stroke:#ccc,stroke-width:1px,color:#000,stroke-dasharray: 5 5
