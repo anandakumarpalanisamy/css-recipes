@@ -1,7 +1,7 @@
 # OAT Diagrams
 
 ```mermaid
-%%{init: {'theme':'base'}}%%
+%%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff', }}}%%
 graph TB
     subgraph SystemContext [OAT System Context]
     Waiter((fa:fa-users Waiters)) -. "Uses PDQ device to take<br/>payments at the<br/>table" .-> OAT(Order at Table)
