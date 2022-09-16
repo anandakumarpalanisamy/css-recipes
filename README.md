@@ -4,7 +4,7 @@
 %%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff', }}}%%
 graph TB
     subgraph SystemContext [System Context - Order At Table Application]
-    Waiter((fa:fa-users Waiters)) -. "Uses PDQ device to take<br/>payments at the<br/>table" .-> OAT(Order at Table<br/><br/>Provide users ability to<br/>join a table, order food and <br/>pay for food at<br/>one of Zizzi<br/>or ASK Italian restaurants )
+    Waiter((fa:fa-users Waiters)) -. "Uses PDQ device to take<br/>payments at the<br/>table" .-> OAT(<strong>Order at Table<strong><br/><br/>Provide users ability to<br/>join a table, order food and <br/>pay for food at<br/>one of Zizzi<br/>or ASK Italian restaurants )
     end
 
     Customer((fa:fa-users Customers)) -. "Visits oat website to order<br/>food and pay at<br/> the table" .-> OAT
