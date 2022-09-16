@@ -10,28 +10,28 @@ graph TB
   subgraph enterprise [Azzurri Group]
     style enterprise fill:#ffffff,stroke:#444444,color:#444444
 
+    10("<div style='font-weight: bold'>Review system</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Review system</div>")
+    style 10 fill:#999999,stroke:#6b6b6b,color:#ffffff
     2["<div style='font-weight: bold'>Waiter</div><div style='font-size: 70%; margin-top: 0px'>[Person]</div><div style='font-size: 80%; margin-top:10px'>Waiter of Zizzi or ASK<br />Italian restaurants who look<br />to accept payment for the<br />table using PDQ application</div>"]
     style 2 fill:#999999,stroke:#6b6b6b,color:#ffffff
     3("<div style='font-weight: bold'>Order At Table</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Allows customer to join a<br />table, order food and pay for<br />food at one of Zizzi or ASK<br />Italian restaurants</div>")
     style 3 fill:#1168bd,stroke:#0b4884,color:#ffffff
     4("<div style='font-weight: bold'>Comtrex POS System</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Allows Order at Table<br />application to submit order<br />to kitchen, retrieve prices,<br />update payment and kick start<br />payment post process</div>")
     style 4 fill:#999999,stroke:#6b6b6b,color:#ffffff
+    5("<div style='font-weight: bold'>Customer Loyalty Platform</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Loyalty</div>")
+    style 5 fill:#999999,stroke:#6b6b6b,color:#ffffff
+    6("<div style='font-weight: bold'>Payment Provider</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Pay</div>")
+    style 6 fill:#999999,stroke:#6b6b6b,color:#ffffff
+    7("<div style='font-weight: bold'>Gift Cards</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Gift Cards</div>")
+    style 7 fill:#999999,stroke:#6b6b6b,color:#ffffff
+    8("<div style='font-weight: bold'>Menu store</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Menu Store</div>")
+    style 8 fill:#999999,stroke:#6b6b6b,color:#ffffff
+    9("<div style='font-weight: bold'>Donation system</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Donation system</div>")
+    style 9 fill:#999999,stroke:#6b6b6b,color:#ffffff
   end
 
   1["<div style='font-weight: bold'>Customer</div><div style='font-size: 70%; margin-top: 0px'>[Person]</div><div style='font-size: 80%; margin-top:10px'>Customer of Zizzi or ASK<br />Italian who looks at order<br />and pay at the table using<br />online Progressive web app</div>"]
   style 1 fill:#08427b,stroke:#052e56,color:#ffffff
-  10("<div style='font-weight: bold'>Review system</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Review system</div>")
-  style 10 fill:#999999,stroke:#6b6b6b,color:#ffffff
-  5("<div style='font-weight: bold'>Customer Loyalty Platform</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Loyalty</div>")
-  style 5 fill:#999999,stroke:#6b6b6b,color:#ffffff
-  6("<div style='font-weight: bold'>Payment Provider</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Pay</div>")
-  style 6 fill:#999999,stroke:#6b6b6b,color:#ffffff
-  7("<div style='font-weight: bold'>Gift Cards</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Gift Cards</div>")
-  style 7 fill:#999999,stroke:#6b6b6b,color:#ffffff
-  8("<div style='font-weight: bold'>Menu store</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Menu Store</div>")
-  style 8 fill:#999999,stroke:#6b6b6b,color:#ffffff
-  9("<div style='font-weight: bold'>Donation system</div><div style='font-size: 70%; margin-top: 0px'>[Software System]</div><div style='font-size: 80%; margin-top:10px'>Donation system</div>")
-  style 9 fill:#999999,stroke:#6b6b6b,color:#ffffff
 
   1-. "<div>Uses</div><div style='font-size: 70%'></div>" .->3
   2-. "<div>Uses</div><div style='font-size: 70%'></div>" .->3
