@@ -109,7 +109,7 @@ graph TB
   10-. "<div>Makes API calls via SDK to<br />manage payment transactions</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->15
   10-. "<div>Reads and writes payment<br />commitments and transactions<br />includes stripe payments and<br />gift card payments</div><div style='font-size: 70%'>[,]</div>" .->12
   10-. "<div>Reads and writes payment<br />commitments and transactions<br />includes stripe payments and<br />gift card payments ,</div><div style='font-size: 70%'>[NoSQL"]</div>" .->11
-  6-. "<div>Reads and write sessions,<br />basket, table, table stats,<br />items and payments data</div><div style='font-size: 70%'>[,]</div>" .->11
+  6-. "<div>Reads and write sessions,<br />basket, table, table stats,<br />items and payments data</div><div style='font-size: 70%'>[NoSQL]</div>" .->11
   7-. "<div>Reads and writes<br />configuration data</div><div style='font-size: 70%'>[NoSQL]</div>" .->11
   8-. "<div>Reads and writes menus,<br />prices and restaurants data</div><div style='font-size: 70%'>[NoSQL]</div>" .->11
   8-. "<div>Retrieves menu and restaurant<br />data</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->17
