@@ -3,7 +3,7 @@
 ```mermaid
 %%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff', }}}%%
 graph TB
-    subgraph SystemContext [System Context Order At Table Application]
+    subgraph SystemContext [[System Context] Order At Table Application]
     Waiter((fa:fa-users Waiters)) -. "Uses PDQ device to take<br/>payments at the<br/>table" .-> OAT(Order at Table)
     end
 
