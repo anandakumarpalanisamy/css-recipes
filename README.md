@@ -1,5 +1,16 @@
 # OAT Diagrams
 
+```mermaid
+%%{init: {'theme':'base'}}%%
+graph TB
+    subgraph SystemContext [OAT System Context]
+    style SystemContext fill:#fff,stroke:#ccc,stroke-width:1px,color:#000,stroke-dasharray: 5 5
+    Waiter[fa:fa-users Waiters] -. "Uses PDQ device to take<br/>payments at the<br/>table" .-> OAT[Order at Table]
+    end
+
+    Customer[fa:fa-users Customers] -. "Visits oat website to order<br/>food and pay at<br/> the table" .-> OAT
+```
+
 ## OAT Context Diagram
 
 ```mermaid
