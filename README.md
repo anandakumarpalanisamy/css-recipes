@@ -1,9 +1,6 @@
-# css-recipes
-A collection of css recipes from the w3schools
+# OAT Diagrams
 
-# Diagrams
-
-## Context Diagram
+## OAT Context Diagram
 
 ```mermaid
 graph TB
@@ -47,7 +44,7 @@ graph TB
   3-. "<div>Collect customer reviews</div><div style='font-size: 70%'></div>" .->19
 ```
 
-## Container Diagram
+## OAT Container Diagram
 
 ```mermaid
 graph TB
@@ -118,4 +115,22 @@ graph TB
   9-. "<div>Retrieve and update table,<br />order and post-payment<br />management data</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->13
   10-. "<div>Check balance and redeem gift<br />cards to pay for the order</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->16
   6-. "<div>Send customer review data</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->19
+```
+
+## OAT Restaurant API Component Diagram
+```mermaid
+graph TB
+  linkStyle default fill:#ffffff
+
+  4("<div style='font-weight: bold'>OAT Frontend (PWA)</div><div style='font-size: 70%; margin-top: 0px'>[Container: JavaScript and React]</div><div style='font-size: 80%; margin-top:10px'>Provides the ordering and<br />payment functionality to<br />customers via mobile/web<br />browser</div>")
+  style 4 fill:#438dd5,stroke:#2e6295,color:#ffffff
+
+  subgraph 8 [Restaurant API]
+    style 8 fill:#ffffff,stroke:#444444,color:#444444
+
+    9("<div style='font-weight: bold'>Menus Router</div><div style='font-size: 70%; margin-top: 0px'>[Component: KOA JS Router]</div><div style='font-size: 80%; margin-top:10px'>Exposes endpoints to GET menu<br />data</div>")
+    style 9 fill:#85bbf0,stroke:#5d82a8,color:#000000
+  end
+
+  4-. "<div>Makes API calls to retrieve<br />menu data</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->9
 ```
