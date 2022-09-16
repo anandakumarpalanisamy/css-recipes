@@ -134,3 +134,15 @@ graph TB
 
   4-. "<div>Makes API calls to retrieve<br />menu data</div><div style='font-size: 70%'>[JSON/HTTPS]</div>" .->9
 ```
+
+## Context Diagram - Mermaid v2
+```mermaid
+graph TB
+    subgraph System Context
+    Waiter --> OAT[Order at Table]
+    style Waiter fill:#fff,stroke:#333,stroke-width:4px
+    style Customer fill:#fff,stroke:#333,stroke-width:4px
+    end
+
+    Customer[fa:fa-user Customer] .-> OAT
+```
