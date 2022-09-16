@@ -7,8 +7,8 @@ graph TB
     Waiter((fa:fa-users Waiters)) -. "Uses PDQ device to take<br/>payments at the<br/>table" .-> OAT(Order at Table<br/><br/>Allows users)
     end
 
-    Customer((fa:fa-users Customers)) -. "Visits oat website to order<br/>food and pay at<br/> the table" .-> OAT(Order at Table)
-    OAT -. "Allows OAT application<br/> to submit order<br/> to kitchen,<br/> retrieve price,<br/> update payment and<br/> payment-post process" .-> Comtrex(Comtrex<br/></br/>POS System )
+    Customer((fa:fa-users Customers)) -. "Visits oat website to order<br/>food and pay at<br/> the table" .-> OAT
+    OAT -. "Allows OAT application<br/> to submit order<br/> to kitchen,<br/> retrieve price,<br/> update payment and<br/> payment-post process" .-> Comtrex(Comtrex<br/></br/>POS System)
     OAT-. "Process customer<br/> order and<br/> payments transactions to<br/> allocate loyalty Z<br/> points to<br/> customer" .-> Atreemo(Atreemo <br/><br/> Customer Loyalty <br/> Platform)
     OAT -. "Manage card<br/> payments" .-> Stripe(Stripe <br/><br/> Payment Provider)
     OAT -. "Manage gift card<br/> payments" .-> EagleEye(Eagle Eye <br/><br/> Gift Cards<br/> Payment Provider)
