@@ -4,7 +4,7 @@
 %%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff'}}}%%
 graph TB
     subgraph SystemContext [OAT System Context]
-    style SystemContext fill:#fff,stroke:#ccc,stroke-width:1px,color:#000,stroke-dasharray: 5 5
+    style SystemContext fill:#ccc,stroke:#ccc,stroke-width:1px,color:#000,stroke-dasharray: 5 5
     Waiter((fa:fa-users Waiters)) -. "Uses PDQ device to take<br/>payments at the<br/>table" .-> OAT(Order at Table)
     end
 
