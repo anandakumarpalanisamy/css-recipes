@@ -13,8 +13,41 @@ graph TB
     OAT -. "Manage card<br/> payments" .-> Stripe(Stripe <br/><br/> Payment Provider)
     OAT -. "Manage gift card<br/> payments" .-> EagleEye(Eagle Eye <br/><br/> Gift Cards<br/> Payment Provider)
     OAT -. "Manage card payments" .-> Yext(Yext <br/><br/> Menu & Restaurant<br> Data Provider)
-    OAT -. "Calculate &<br/> submit donation<br/> by bill value to<br/> charities<br/> supported by<br/> Pennies" .-> Pennies(Pennies <br/><br/> Menu & Restaurant<br> Data Provider)
+    OAT -. "Calculate &<br/> submit donation<br/> by bill value to<br/> charities<br/> supported by<br/> Pennies" .-> Pennies(Pennies <br/><br/> Donation system)
     OAT -. "Collect customer<br/> reviews" .-> Yumpingo(Yumpingo <br/><br/> Review System)
+```
+
+# OAT Container Diagram
+```mermaid
+%%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff', }}}%%
+graph TB
+
+    subgraph SystemContext [Containers - Order At Table Application]
+    PDQPaymentApp -. "Wraps the OAT web app into a web view (React Native Web view)" .-> OATFrontEnd(<strong>OAT Frontend PWA</strong><br/><br/> Provides the ordering and<br/> payment functionality to <br/>customers via mobile/web<br/> browswer)
+    OATFrontEnd -. "Makes API calls to<br/>retrieve OAT restaurant,<br/> menu and customer session data" .-> PATGateway(<strong>Gateway API</strong><br/><br/>Front facing API for<br/> the Azzurri OAT application.<br/> User interface layers<br/> must interact with<br/> Gateway API)
+    PATGateway -. "Makes API calls to<br/>manage order &<br/>post payment with<br/>POS System" .-> PATOperator(<strong>Operator API</strong><br/><br/>API for handling<br/>order and post-payment<br/>management capabilities<br/> via API Calls to Comtrex)
+    PATGateway -. "Makes API calls to<br/>retrieve and store menu,<br/>restaurant data<br/>from Yext and expose<br/>expose endpoints for<br/>OAT consumption" .-> OATRestaurant(<strong>Restaurant API</strong><br/><br/>)
+    PATGateway -. "Makes API calls to<br/>store and retrieve<br/>configuration data for<br/>OAT application" .-> OATConfig(<strong>Config API</strong><br/><br/>)
+    PATGateway -. "Makes API calls to<br/>manage payment<br/>transactions<br/>made from OAT application" .-> PATPayment(<strong>Payment API</strong><br/><br/>)
+    PATGateway -. "Reads and write<br/>sessions, basket,<br/>table, table stats<br/>items and<br/>payments data" .-> DynamoDB(<strong>OAT DynamoDB</storng><br/><br/>)
+    PATPayment -. "Reads and write<br/>payment commitments<br/>and transactions<br/>includes stripe<br/>payments and<br/>gift card <br/>payments" .-> PaymentsV2DB(<strong>OAT PaymentsV2 DB</strong><br/><br/>) 
+    PATPayment -. "Reads and writes<br/>payment commitments<br/>and transactions<br/>includes stripe<br/>payments and<br/>gift card <br/>payments" .-> DynamoDB
+    OATConfig -. "Reads and write<br/>configuration<br/>data" .-> DynamoDB
+    OATRestaurant -. "Reads and write<br/>menus, prices &<br/>restaurant data." .-> DynamoDB
+    end
+
+    Customer((fa:fa-users Customers)) -. "Visits oat website to order<br/>food and pay at<br/> the table" .-> OATFrontEnd
+    Waiter((fa:fa-users Waiters)) -. "Uses PDQ device to take<br/>payments at the<br/>table" .-> PDQPaymentApp(<strong>PDQ Paymnent App</strong><br/><br/> Provides the payment<br/> capabilities to waiters <br>via PDQ Device)
+    Waiter((fa:fa-users Waiters)) -. "Manage table,<br/>order, take<br/>payment and<br/>post payment<br/>process" .-> Comtrex(<strong>Comtrex POS System</strong><br/><br/>Allows OAT app to<br/>submit order<br/>to kitchen,<br/>retrieve prices,<br/>update payment<br/>and kick start<br/>payment post<br/>process)
+    PATOperator -. "Retrieve and<br/>update table<br/>order and<br/>post pament<br/>management data<br/>[JSON/HTTPS]" .-> Comtrex
+    PATGateway -. "Send customer<br/>review data<br/>[JSON/HTTPS]" .-> Yumpingo(Yumpingo <br/><br/> Review System)
+    PATPayment -. "Check balance<br/> and redeem gift<br/>cards to pay for<br/>the order [JSON/HTTPS]" .-> EagleEye(Eagle Eye <br/><br/> Gift Cards<br/> Payment Provider)
+    PATPayment -. "Makes API Calls<br/> via SDK to manage<br/>payment transacitons<br/> [JSON/HTTPS]" .-> Stripe(Stripe <br/><br/> Payment Provider)
+    direction LR
+    OATRestaurant -. "Retrieves menu<br/>and restaurant<br/>data [JSON/HTTPS]" .-> Yext(Yext <br/><br/> Menu & Restaurant<br> Data Provider)
+    OATRestaurant -. "Calculate<br/> and log donations<br/>made to charities<br/>on Pennies System[JSON/HTTPS]" .-> Pennies(Pennies <br/><br/> Donation system) 
+    OATRestaurant -. "Post transaction <br/>process to allocate<br/> loyalty Z points <br/>to customer" .-> Atreemo(Atreemo <br/><br/> Customer Loyalty <br/> Platform) 
+
 ```
 
 ## OAT Context Diagram
