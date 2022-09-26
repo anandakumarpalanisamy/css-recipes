@@ -80,6 +80,40 @@ graph TB
     OATRestaurant -. "Post transaction <br/>process to allocate<br/> loyalty Z points <br/>to customer" .-> Atreemo(Atreemo <br/><br/> Customer Loyalty <br/> Platform) 
 ```
 
+## OAT Restaurant API - C3 Diagram
+```mermaid
+%%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff', }}}%%
+graph TB
+
+  Client -. "Get Restaurant<br/> By Id<br/>/v1/restaurants/:id" .-> RestaurantRouter(Restaurant<br/>Router)
+  Client -. "Get Restaurant<br/> By Brand<br/>v1/restaurants/" .-> RestaurantRouter
+  Client -. "Get Timezone<br/>v1/restaurants<br/>/:id/timezone" .-> RestaurantRouter
+
+  Client -. "Get Items<br/>/v1/menus/<br/>:restaurantId/items" .-> MenuRouter(Menu<br/>Router)
+  Client -. "Get Availability<br/>/v1/menus/<br/>:restaurantId/availability" .-> MenuRouter(Menu<br/>Router)
+  Client -. "Get Prices<br/>/v1/menus/:restaurantId/prices" .-> MenuRouter(Menu<br/>Router)
+  Client -. "Get Menus<br/>/v2/menus" .-> MenuRouter(Menu<br/>Router)
+
+  subgraph "<strong>OAT Restaurant API Restaurant endpoints</strong>"
+  RestaurantRouter -. "getRestaurant<br/>ById" .-> RestaurantController(Restaurant<br/>Controller)
+  RestaurantController -. "getById" .-> DynamoDB(Dynamo DB<br/>restaurant-store)
+  RestaurantRouter -. "getRestaurant<br/>ByBrand" .-> RestaurantController
+  RestaurantController -. "getBrand<br/>Enabled" .-> DynamoDB(<strong>Dynamo DB</strong><br/><br/>restaurant-store)
+  RestaurantRouter -. "getTimezone" .-> RestaurantController
+  end
+
+  subgraph "<strong>OAT Restaurant API - Menu endpoints</strong>"
+  MenuRouter -. "getItems" .-> MenuController(Menu<br/>Controller)
+  MenuController -. "getById" .-> RestaurantStore(Dynamo DB<br/>restaurant-store)
+  MenuController -. "getByLookUpId" .-> MenuStore(Dynamo DB<br/>menu-store)
+  MenuRouter -. "getAvailability" .-> MenuController(Menu<br/>Controller)
+  MenuController -. "getAvailability" .-> OperatorService(Operator<br/>Service)
+  MenuRouter -. "get<br/>Prices" .-> MenuController(Menu<br/>Controller)
+  MenuController -. "getPricesByBrandTier" .-> PriceStore(Dynamo DB<br/>price-store)
+  MenuRouter -. "getMenus" .-> MenuController(Menu<br/>Controller)
+  end
+```
+
 ## OAT Context Diagram
 
 ```mermaid
