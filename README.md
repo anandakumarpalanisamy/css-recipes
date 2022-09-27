@@ -86,12 +86,12 @@ graph TB
 %%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff', }}}%%
 graph TB
 
-  style Atreemo fill:#FDDCDC,stroke:#333,stroke-width:2px
-  style Yext fill:#FDDCDC,stroke:#333,stroke-width:2px
-  style PatOperator fill:#FDDCDC,stroke:#333,stroke-width:2px
-  style PATPayment fill:#FDDCDC,stroke:#333,stroke-width:2px
-  style Yumpingo fill:#FDDCDC,stroke:#333,stroke-width:2px
-  style Pennies fill:#FDDCDC,stroke:#333,stroke-width:2px
+  style Atreemo fill:#FDDCDC,stroke:#333,stroke-width:2px,color:#333
+  style Yext fill:#FDDCDC,stroke:#333,stroke-width:2px,color:#333
+  style PatOperator fill:#FDDCDC,stroke:#333,stroke-width:2px,color:#333
+  style PATPayment fill:#FDDCDC,stroke:#333,stroke-width:2px,color:#333
+  style Yumpingo fill:#FDDCDC,stroke:#333,stroke-width:2px,color:#333
+  style Pennies fill:#FDDCDC,stroke:#333,stroke-width:2px,color:#333
 
   Client -. "Makes API calls <br/>for menu, menu item<br/> & price data" .-> MenuRouter(Menu<br/>Router)
   Client -. "Makes API calls <br/>for restaurant data" .-> RestaurantRouter(Restaurant<br/>Router)
