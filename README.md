@@ -80,6 +80,99 @@ graph TB
     OATRestaurant -. "Post transaction <br/>process to allocate<br/> loyalty Z points <br/>to customer" .-> Atreemo(Atreemo <br/><br/> Customer Loyalty <br/> Platform) 
 ```
 
+## OAT Restaurant API - Endpoints summary
+
+```mermaid
+%%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff', }}}%%
+graph TB
+
+  style Atreemo fill:#ccc,stroke:#333,stroke-width:2px
+  style Yext fill:#ccc,stroke:#333,stroke-width:2px
+  style PatOperator fill:#ccc,stroke:#333,stroke-width:2px
+  style PATPayment fill:#ccc,stroke:#333,stroke-width:2px
+  style Yumpingo fill:#ccc,stroke:#333,stroke-width:2px
+  style Pennies fill:#ccc,stroke:#333,stroke-width:2px
+
+  Client -. "Makes API calls <br/>for menu, menu item<br/> & price data" .-> MenuRouter(Menu<br/>Router)
+  Client -. "Makes API calls <br/>for restaurant data" .-> RestaurantRouter(Restaurant<br/>Router)
+  Client -. "Get Review Url" .-> YumpingoRouter(Yumpingo<br/>Router)
+  Client -. "Send Email" .-> EmailRouter(Email<br/>Router)
+  Client -. "Calculate<br/>& Submit donation" .-> DonationRouter(Donation<br/>Router)
+  Client -. "Get FAQs" .-> FAQRouter(FAQ<br/>Router)
+  Client -. "Post Transaction" .-> StatsRouter(Stats<br/>Router)
+
+  subgraph "FAQs"
+    FAQRouter
+  end
+
+  subgraph "DynamoDB"
+    MenuStore
+    PriceStore
+    RestaurantStore
+  end
+
+  subgraph "Restaurant endpoints"
+    RestaurantRouter -. "Makes method calls <br/>to retrieve restaurant<br/>data" .-> RestaurantController(Restaurant<br/>Controller)
+  end
+
+  subgraph "Yumpingo endpoints"
+    YumpingoRouter -. getReviewUrl .-> YumpingoController(Yumpingo<br/>Controller)
+  end
+
+  subgraph "Email endpoints"
+    EmailRouter -. "sendEmail" .-> EmailController(Email<br/>Controller)
+  end
+
+  subgraph "Donation endpoints"
+    DonationRouter -. "calculate<br/>Donation" .-> DonationController(Donation<br/>Controller)
+    DonationRouter -. "submit<br/>Donation" .-> DonationController
+    DonationController -. "getSuggested<br/>Donation" .-> DonationService(Donation<br/>Service)
+    DonationController -. "submit<br/>Donation" .-> DonationService
+  end
+
+  subgraph "stats endpoint"
+    StatsRouter -. "post<br/>Transaction" .-> StatsController(Stats<br/>Controller)
+    StatsController -. "getOrder<br>Snapshot" .-> OperatorService
+    StatsController -. "getTransactions" .-> PaymentService(Payment<br/>Service)
+    StatsController -. "getAll<br/>Completed<br/>Payments" .-> PaymentService
+  end
+
+  subgraph "Menu endpoitns"
+    MenuRouter -. "Makes method calls <br/>for menu, menu item<br/> & price data" .-> MenuController(Menu<br/>Controller)
+    MenuController -. "getAvailability" .-> OperatorService(Operator<br/>Service)
+  end
+
+  MenuController -. "getByLookUpId" .-> MenuStore(DynamoDB<br/>menu-store)
+  MenuController -. "getPrices<br/>ByBrandTier" .-> PriceStore(DynamoDB<br/>price-store)
+  OperatorService -. "getAvailability" .-> PatOperator(PAT Operator API)
+  MenuController -. "getMenu<br/>ItemV3<br/>(getPOSMenuItem)" .-> Yext
+  MenuController -. "getMenu<br/>ItemV3<br/>(getItemModifiers)" .-> Yext
+  MenuController -. "getById" .-> RestaurantStore("DynamoDB<br/>restaurant-store")
+
+  RestaurantController -. "getById" .-> RestaurantStore
+  RestaurantController -. "getRestaurant<br/>ByBrand" .-> RestaurantStore
+
+  YumpingoController -. "getById" .-> RestaurantStore
+  YumpingoController -. "getReviewUrl" .-> Yumpingo(Yumpingo<br/>API)
+
+  EmailController -. "getById" .-> RestaurantStore
+  EmailController -. "postContact" .-> Atreemo
+  EmailController -. "communication<br/>Preference" .-> Atreemo
+  EmailController -. "sendElement" .-> Atreemo
+
+  DonationController -. "getById" .-> RestaurantStore
+  DonationService -. "sendCalculation<br/>Request" .-> Pennies(Pennies<br/>API)
+  DonationService -. "logDonation" .-> Pennies
+
+  StatsController -. "postTransaction" .-> Atreemo
+
+  PaymentService -. "getTransactions" .-> PATPayment(PAT Payment API<br/><br/>pat-payment)
+  PaymentService -. "getAll<br/>Completed<br/>Payments" .-> PATPayment
+
+
+  FAQRouter -. "getFAQs" .-> Yext
+```
+
 ## OAT Restaurant API - C3 Diagram
 ```mermaid
 %%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff', }}}%%
