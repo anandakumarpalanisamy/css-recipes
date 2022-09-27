@@ -86,7 +86,7 @@ graph TB
 %%{init: {'theme':'base','themeVariables': { 'lineColor': '#ffffff', }}}%%
 graph TB
 
-  style Atreemo fill:#ccc,stroke:#333,stroke-width:2px
+  style Atreemo fill:#ccc,stroke:black,stroke-width:2px
   style Yext fill:#ccc,stroke:#333,stroke-width:2px
   style PatOperator fill:#ccc,stroke:#333,stroke-width:2px
   style PATPayment fill:#ccc,stroke:#333,stroke-width:2px
